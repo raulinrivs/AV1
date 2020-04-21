@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+    </style>
+
+    <label for="valor1">Insira o valor 1:</label><br>
+    <input type="text1" id="valor1" name="valor1"><br>
+    <label for="valor2">Insira o valor 2:</label><br>
+    <input type="text2" id="valor2" name="valor2"><br>
+    <label for="valor3">Insira o valor 3:</label><br>
+    <input type="text3" id="valor3" name="valor3"><br>
+    <button type="button" onclick="calcularMedia()">Calcular média</button><br>
+    <p id="media"></p>
+
+    
+    <script>
+        function calcularMedia() {
+            var valor1 = +document.getElementById('valor1').value;
+            console.log(valor1);
+            var valor2 = +document.getElementById('valor2').value;
+            console.log(valor2);
+            var valor3 = +document.getElementById('valor3').value;
+            console.log(valor3);
+            var media = (valor1 + valor2 + valor3)/3;
+            console.log(media);
+            document.getElementById('media').innerHTML = media;
+        }
+        
+    </script>
+</body>
+</html>

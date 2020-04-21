@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="numeros"></p>
+    <button type="button" onclick="gerarLoteria()">Gerar Numeros</button><br>
+    <script>
+        function gerarLoteria() {
+            do{
+                var dig1 = Math.floor((Math.random() * 60) + 1);
+                var dig2 = Math.floor((Math.random() * 60) + 1);
+                var dig3 = Math.floor((Math.random() * 60) + 1);
+                var dig4 = Math.floor((Math.random() * 60) + 1);
+                var dig5 = Math.floor((Math.random() * 60) + 1);
+                var dig6 = Math.floor((Math.random() * 60) + 1);
+                console.log(dig1);
+                console.log(dig2);
+                console.log(dig3);
+                console.log(dig4);
+                console.log(dig5);
+                console.log(dig6);
+            }while(dig1==dig2 || dig2==dig3 || dig3==dig4 || dig4==dig5 || dig5==dig6)
+            document.getElementById('numeros').innerHTML = dig1 + " " + dig2 + " " + dig3 + " " + dig4 + " " + dig5 + " " + dig6;
+        }
+    </script>
+</body>
+</html>

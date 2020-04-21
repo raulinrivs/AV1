@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="txtNome"><br>
+    <label for="idade">Idade:</label><br>
+    <input type="text" id="txtIdade"><br>
+    <label for="email">Email:</label><br>
+    <input type="text" id="txtEmail"><br>
+    <label for="senha">Senha:</label><br>
+    <input type="text" id="txtSenha"><br>
+    <button onclick="gravar()">Gravar</button>
+    
+    <script>
+        var nome
+        var idade
+        var email
+        var senha
+        var okNome, okIdade, okEmail, okSenha
+
+        function gravar() {
+        nome = document.getElementById('txtNome').value
+        idade = document.getElementById('txtIdade').value
+        email = document.getElementById('txtEmail').value
+        senha = document.getElementById('txtSenha').value
+        validar(nome, idade, email, senha)
+
+        }
+
+        function validaNome(nome) {
+            for(i=0; nome.lenght; i++){
+                if (nome > a && nome > z && nome == " "){
+                    return false
+                }else return true
+            }
+        }
+        
+        function validaIdade(idade) {
+            if(idade === "") {
+            return false;
+            }
+            else return true
+        }
+
+        function validaEmail(email) {
+            ""+email
+            var cont
+            for(i=0; email.lenght; i++){
+                if (email[i] == "@")
+                cont++
+            }
+            if (cont!=1){
+                return false
+            }else return true
+        }
+
+        function validaSenha(senha) {
+            if (senha.lenght < 8){
+                return false
+            }else {
+                console.log(senha.lenght)
+                return true
+            }
+        }
+
+        function validar(nome, idade, email, senha) {
+            var stringError
+            okNome = validaNome(nome)
+            okIdade = validaIdade(idade)
+            okEmail = validaEmail(email)
+            okSenha = validaSenha(senha)
+            if (okNome == false){
+                stringError = stringError + "Campos incorretos\nNome"
+            }
+            if (okIdade == false){
+                stringError = stringError + "\nIdade"
+            }
+            if (okEmail == false){
+                stringError = stringError + "\nEmail"
+            }
+            if (okSenha == false){
+                stringError = stringError + "\nSenha"
+            }
+            if(okNome == true && okIdade == true && okEmail == true && okSenha == true){
+                alert("Pessoa cadastrada com sucesso")
+            }else alert("" + stringError)
+        }
+
+    </script>
+</body>
+</html>
